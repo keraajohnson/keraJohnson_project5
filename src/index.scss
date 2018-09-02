@@ -1,0 +1,184 @@
+// variables
+$bodyColor: #F5F5F5;
+$recipeCardColor: #ffffff; 
+
+@mixin headingFont($fontSize) {
+  font-size: $fontSize;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+@mixin bodyFont($fontSize) {
+  font-size: $fontSize;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 62.5%;
+  background-color: $bodyColor;
+}
+
+.appContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.list {
+  @include bodyFont(1rem);
+  margin: 2px;
+  color: #7a7a7a;
+}
+
+.submitRecipe {
+  @include headingFont(1rem);
+  color: #678797;
+  position: absolute;
+  background: none;
+  border:none;
+  bottom: 10px;
+  right: 40%;
+}
+
+// Header 
+
+.heading {
+  @include headingFont(2rem);
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+// Recipe List
+
+.recipeList {
+  margin-top: 30px;
+    h2 {
+      @include headingFont(1.4rem);
+      position: relative;
+        &::after {
+          position: absolute;
+          border-bottom: 2px solid black;
+          width: 20%;
+          height: 2px;
+        }
+    }
+    p {
+      @include bodyFont(1rem);
+      line-height: 25px;
+    }
+}
+
+// New Recipe
+
+.newRecipeSection {
+  width: 80%;
+}
+
+.recipeCardInput {
+ width: 80%;
+ min-height: 45vh;
+ background-color: $recipeCardColor;
+ box-shadow: 8px 8px 20px -5px rgba(0,0,0,0.74);
+ padding: 30px;
+ position: relative;
+ clear: both;
+}
+
+.recipeListSection {
+  width: 20%;
+}
+
+.newRecipeButton {
+  @include headingFont(1rem);
+  border: none;
+  color: red;
+  background: none;
+  padding: 10px;
+  margin: 5px 0;
+  float: left;
+}
+
+.recipeInput {
+  display: flex;
+  flex-direction: column;
+    .recipeNameContainer {
+      display: flex;
+      margin: 20px 0;
+      .recipeNameLabel {
+      @include headingFont(1rem);
+      width: 30%;
+      padding: 5px;
+      }
+        .recipeNameInput {
+        @include bodyFont(0.8rem);
+        width: 45%;
+        border: none;
+        border-bottom: 1px solid #dcdcdc;
+      }
+    }
+    .ingredientContainer {
+      display: flex;
+      margin: 20px 0;
+        .ingredientsLabel{
+          @include headingFont(1rem);
+          width: 30%;
+          padding: 5px;
+        }
+        .ingredientsInput {
+          @include bodyFont(0.8rem);
+          width: 50%;
+          border: none;
+          border-bottom: 1px solid #dcdcdc;
+        }
+    }
+    .directionsContainer {
+      display: flex;
+      margin: 20px 0;
+        .directionsLabel {
+          @include headingFont(1rem);
+          width: 30%;
+          padding: 5px;
+        }
+        .recipeDirectionsInput {
+          @include bodyFont(1rem);
+          width: 50%;
+          border: none;
+          border-bottom: 1px solid #dcdcdc;
+        }
+    }
+    .recipeButton {
+      @include headingFont(0.8rem);
+      background: none;
+      border: none;
+      padding-top: 25px;
+      padding-left: 20px;
+      color: #678797;
+    }
+} 
+
+// New Card
+.recipeCard {
+  width: 80%;
+}
+
+.newCard {
+width: 80%;
+ min-height: 45vh;
+ background-color: $recipeCardColor;
+ box-shadow: 8px 8px 20px -5px rgba(0,0,0,0.74);
+ padding: 30px;
+ margin-top: 50px;
+}
+

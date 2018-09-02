@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 62.5%;
+  background-color: #F5F5F5; }
+
+.appContainer {
+  display: flex;
+  margin-top: 20px; }
+
+.wrapper {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto; }
+
+.list {
+  font-size: 1rem;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  margin: 2px;
+  color: #7a7a7a; }
+
+.submitRecipe {
+  font-size: 1rem;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #678797;
+  position: absolute;
+  background: none;
+  border: none;
+  bottom: 10px;
+  right: 40%; }
+
+.heading {
+  font-size: 2rem;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 0; }
+
+.recipeList {
+  margin-top: 30px; }
+  .recipeList h2 {
+    font-size: 1.4rem;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative; }
+    .recipeList h2::after {
+      position: absolute;
+      border-bottom: 2px solid black;
+      width: 20%;
+      height: 2px; }
+  .recipeList p {
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    line-height: 25px; }
+
+.newRecipeSection {
+  width: 80%; }
+
+.recipeCardInput {
+  width: 80%;
+  min-height: 45vh;
+  background-color: #ffffff;
+  box-shadow: 8px 8px 20px -5px rgba(0, 0, 0, 0.74);
+  padding: 30px;
+  position: relative;
+  clear: both; }
+
+.recipeListSection {
+  width: 20%; }
+
+.newRecipeButton {
+  font-size: 1rem;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border: none;
+  color: red;
+  background: none;
+  padding: 10px;
+  margin: 5px 0;
+  float: left; }
+
+.recipeInput {
+  display: flex;
+  flex-direction: column; }
+  .recipeInput .recipeNameContainer {
+    display: flex;
+    margin: 20px 0; }
+    .recipeInput .recipeNameContainer .recipeNameLabel {
+      font-size: 1rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      width: 30%;
+      padding: 5px; }
+    .recipeInput .recipeNameContainer .recipeNameInput {
+      font-size: 0.8rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      width: 45%;
+      border: none;
+      border-bottom: 1px solid #dcdcdc; }
+  .recipeInput .ingredientContainer {
+    display: flex;
+    margin: 20px 0; }
+    .recipeInput .ingredientContainer .ingredientsLabel {
+      font-size: 1rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      width: 30%;
+      padding: 5px; }
+    .recipeInput .ingredientContainer .ingredientsInput {
+      font-size: 0.8rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      width: 50%;
+      border: none;
+      border-bottom: 1px solid #dcdcdc; }
+  .recipeInput .directionsContainer {
+    display: flex;
+    margin: 20px 0; }
+    .recipeInput .directionsContainer .directionsLabel {
+      font-size: 1rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      width: 30%;
+      padding: 5px; }
+    .recipeInput .directionsContainer .recipeDirectionsInput {
+      font-size: 1rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      width: 50%;
+      border: none;
+      border-bottom: 1px solid #dcdcdc; }
+  .recipeInput .recipeButton {
+    font-size: 0.8rem;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding-top: 25px;
+    padding-left: 20px;
+    color: #678797; }
+
+.recipeCard {
+  width: 80%; }
+
+.newCard {
+  width: 80%;
+  min-height: 45vh;
+  background-color: #ffffff;
+  box-shadow: 8px 8px 20px -5px rgba(0, 0, 0, 0.74);
+  padding: 30px;
+  margin-top: 50px; }
