@@ -11,7 +11,7 @@ class NewRecipe extends Component {
             recipeDirections: [],
             currentDirection: '',
             ingredientsListUnsubmitted: '',
-            directionsListUnsubmitted: '',
+            directionsListUnsubmitted: ''
         }
     }
     handleChange = (e) => {

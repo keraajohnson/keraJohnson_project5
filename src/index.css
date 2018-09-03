@@ -168,3 +168,51 @@ body {
   box-shadow: 8px 8px 20px -5px rgba(0, 0, 0, 0.74);
   padding: 30px;
   margin-top: 50px; }
+  .newCard li {
+    list-style: none;
+    font-size: 0.7rem;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    margin: 5px 0;
+    text-align: left; }
+  .newCard .recipeName {
+    display: flex;
+    width: 60%; }
+    .newCard .recipeName h2 {
+      font-size: 1.1rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 4px;
+      text-transform: uppercase; }
+    .newCard .recipeName p {
+      font-size: 0.9rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      margin: 16px 0px 0 20px; }
+  .newCard .ingredients {
+    display: flex;
+    margin-top: 20px; }
+    .newCard .ingredients .ingredientsHeading {
+      font-size: 0.7rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 4px;
+      text-transform: uppercase; }
+    .newCard .ingredients .ingredientsList {
+      display: flex;
+      flex-direction: column;
+      margin-top: 12px;
+      margin-left: 20px; }
+  .newCard .directions {
+    display: flex;
+    margin-top: 20px; }
+    .newCard .directions .directionsHeading {
+      font-size: 0.7rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 4px;
+      text-transform: uppercase; }
+    .newCard .directions .directionsList {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: 32px; }

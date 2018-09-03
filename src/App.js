@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase from './firebase';
+import firebase from './components/firebase';
 
 // COMPONENTS
 import Header from './components/Header/Header'
@@ -49,10 +49,16 @@ class App extends Component {
 
   }
   showFullRecipe = (recipeKey) => {
-    console.log(recipeKey)
-    this.setState({
-      showFullRecipe: !this.state.showFullRecipe,
-      recipeKey: recipeKey
+    const key = recipeKey
+    const dbRef = firebase.database().ref(key);
+    dbRef.on('value', (snapshot)=> {
+      this.setState({
+        showFullRecipe: !this.state.showFullRecipe,
+        recipeKey: recipeKey,
+        directions: snapshot.val().recipeDirections,
+        ingredients: snapshot.val().recipeIngredients,
+        recipeName: snapshot.val().recipeName
+      })
     })
   }
   render() {
@@ -60,7 +66,7 @@ class App extends Component {
       <div className="App wrapper">
         <Header />
       <div className="appContainer">
-          {this.state.showFullRecipe === false ? <NewRecipe addRecipeToDatabase={this.addRecipeToDatabase} /> : <RecipeCard showFullRecipe={this.state.showFullRecipe}/>}
+          {this.state.showFullRecipe === false ? <NewRecipe addRecipeToDatabase={this.addRecipeToDatabase} /> : <RecipeCard recipeKey={this.state.recipeKey} directions={this.state.directions} ingredients={this.state.ingredients} recipeName={this.state.recipeName}/>}
         <RecipeList showFullRecipe={this.showFullRecipe} recipes={this.state.recipeList}/>
       </div>
       </div>

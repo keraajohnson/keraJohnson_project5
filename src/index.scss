@@ -1,3 +1,4 @@
+
 // variables
 $bodyColor: #F5F5F5;
 $recipeCardColor: #ffffff; 
@@ -180,5 +181,49 @@ width: 80%;
  box-shadow: 8px 8px 20px -5px rgba(0,0,0,0.74);
  padding: 30px;
  margin-top: 50px;
+  li {
+    list-style: none;
+    @include bodyFont(.7rem);
+    margin: 5px 0;
+    text-align: left;
+  }
+  .recipeName {
+    display: flex;
+    // border-bottom: 1px solid black;
+    width: 60%;
+      h2 {
+        @include headingFont(1.1rem);
+      }
+      p {
+        @include bodyFont(.9rem);
+        margin: 16px 0px 0 20px;
+      }
+  }
+  .ingredients {
+    display: flex;
+    margin-top: 20px;
+      .ingredientsHeading {
+        @include headingFont(.7rem);
+      }
+      .ingredientsList{
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+        margin-left: 20px;
+      }
+  }
+  .directions {
+    display: flex;
+    margin-top: 20px;
+      .directionsHeading{
+         @include headingFont(.7rem);
+      }
+      .directionsList {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-left: 32px;
+      }
+  }
 }
 
