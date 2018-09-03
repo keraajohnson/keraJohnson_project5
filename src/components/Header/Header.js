@@ -31,6 +31,13 @@ class Header extends Component {
             });
         }
     }
+    logIn = (e) => {
+        e.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then((data) => {
+            console.log(data);
+        });
+    }
     render() {
         let formLogin = '';
         if(this.state.formShow === 'signUp') {
@@ -39,7 +46,7 @@ class Header extends Component {
                     <label htmlFor="email">Email:</label>
                     <input type='email' name='email' onChange={this.handleChange}/>
                     <label htmlFor="password">Password:</label>
-                    <input type="password" onChange={this.handleChange}/>
+                    <input type="password" name="password" onChange={this.handleChange}/>
                     <label htmlFor="confirm">Confirm Password:</label>
                     <input type="password" name="confirm" onChange={this.handleChange}/>
                     <button>Sign In</button>
@@ -58,16 +65,16 @@ class Header extends Component {
         }
         return (
             <header>
-                <div className="heading">
-                    <h1 className="heading">Recipe Box</h1>
-                </div>
                 <div className="auth">
                     <nav>
                         <ul>
                             <li><a href="" className="signUp" onClick={this.formShow}>Sign Up</a></li>
                             <li><a href="" className="logIn" onClick={this.formShow}>Log In</a></li>
                         </ul>
-                    </nav>             
+                    </nav>
+                </div>
+                <div className="heading">
+                    <h1 className="heading">Recipe Box</h1>
                 </div>
             {formLogin}
             </header>

@@ -17,6 +17,30 @@ $recipeCardColor: #ffffff;
   text-transform: lowercase;
 }
 
+@mixin breakpoint($point){
+    // 
+    @if $point == desktop{
+        @media (max-width: 1280px) { @content ; }
+    }
+    @else if $point == laptop{
+        @media (max-width: 1024px) { @content ; }
+    }
+        // 
+        @else if $point == bigPhablet{
+        @media (max-width: 768px) { @content ; }
+    }
+      @else if $point == phablet{
+          @media (max-width: 550px)  { @content ; }
+      }
+    @else if $point == mobileonly{
+        @media (max-width: 375px)  { @content ; }
+
+    }
+    @else if $point == smallmobileonly{
+        @media (max-width: 320px)  { @content ; }
+    }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -28,12 +52,23 @@ body {
 .appContainer {
   display: flex;
   margin-top: 20px;
+  @include breakpoint(bigPhablet) {
+    flex-direction: column;
+  }
 }
 
 .wrapper {
   width: 80%;
   max-width: 1080px;
   margin: 0 auto;
+  // mobile only break point
+    @include breakpoint(bigPhablet) {
+      width:100%;
+    }
+  // small mobile break point
+    // @include breakpoint(smallmobileonly) {
+    //   width: 101%;
+    // }
 }
 
 .list {
@@ -50,6 +85,10 @@ body {
   border:none;
   bottom: 10px;
   right: 40%;
+    @include breakpoint(bigPhablet) {
+      right: 25%;
+      bottom: 5px;
+    }
 }
 
 // Header 
@@ -59,6 +98,9 @@ body {
   margin-top: 20px;
   margin-bottom: 0;
   padding: 0;
+    @include breakpoint(bigPhablet) {
+      margin-top: 10px;
+    }
 }
 
 // Recipe List
@@ -95,6 +137,16 @@ body {
  padding: 30px;
  position: relative;
  clear: both;
+
+ @include breakpoint(mobileonly) {
+    width: 104%;
+    box-shadow: none;
+  }
+//  phablet break point
+  @include breakpoint(bigPhablet) {
+    width: 115%;
+    box-shadow: none;
+  }
 }
 
 .recipeListSection {
@@ -117,46 +169,85 @@ body {
     .recipeNameContainer {
       display: flex;
       margin: 20px 0;
+      // small mobile break point
+        @include breakpoint(bigPhablet) {
+          flex-direction: column;
+        }
       .recipeNameLabel {
       @include headingFont(1rem);
       width: 30%;
       padding: 5px;
+        // small mobile break point
+        @include breakpoint(bigPhablet) {
+          width: 100%;
+        }
       }
         .recipeNameInput {
         @include bodyFont(0.8rem);
         width: 45%;
         border: none;
         border-bottom: 1px solid #dcdcdc;
+          // small mobile break point
+          @include breakpoint(bigPhablet) {
+            width: 100%;
+            margin-top: 10px;
+          }
       }
     }
     .ingredientContainer {
       display: flex;
       margin: 20px 0;
+        // small mobile break point
+        @include breakpoint(bigPhablet) {
+          flex-direction: column;
+        }
         .ingredientsLabel{
           @include headingFont(1rem);
           width: 30%;
           padding: 5px;
+            // small mobile break point
+            @include breakpoint(bigPhablet) {
+            width: 100%;
+          }
         }
         .ingredientsInput {
           @include bodyFont(0.8rem);
           width: 50%;
           border: none;
           border-bottom: 1px solid #dcdcdc;
+            // small mobile break point
+            @include breakpoint(bigPhablet) {
+              width: 100%;
+              margin-top: 10px;
+            }
         }
     }
     .directionsContainer {
       display: flex;
       margin: 20px 0;
+        // small mobile break point
+        @include breakpoint(bigPhablet) {
+          flex-direction: column;
+        }
         .directionsLabel {
           @include headingFont(1rem);
           width: 30%;
           padding: 5px;
+             // small mobile break point
+            @include breakpoint(bigPhablet) {
+            width: 100%;
+          }
         }
         .recipeDirectionsInput {
           @include bodyFont(1rem);
           width: 50%;
           border: none;
           border-bottom: 1px solid #dcdcdc;
+          // small mobile break point
+            @include breakpoint(bigPhablet) {
+              width: 100%;
+              margin-top: 10px;
+            }
         }
     }
     .recipeButton {

@@ -19,10 +19,14 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    // firebase ref call
-    dbRef.on('value', (snapshot) => {
-        this.sortRecipes(snapshot.val()); 
-    });
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        // firebase ref call
+        dbRef.on('value', (snapshot) => {
+          this.sortRecipes(snapshot.val());
+        });
+      }
+    })
   }
   sortRecipes = (recipeObject) => {
     if (recipeObject) {

@@ -8,11 +8,17 @@ body {
 .appContainer {
   display: flex;
   margin-top: 20px; }
+  @media (max-width: 768px) {
+    .appContainer {
+      flex-direction: column; } }
 
 .wrapper {
   width: 80%;
   max-width: 1080px;
   margin: 0 auto; }
+  @media (max-width: 768px) {
+    .wrapper {
+      width: 100%; } }
 
 .list {
   font-size: 1rem;
@@ -33,6 +39,10 @@ body {
   border: none;
   bottom: 10px;
   right: 40%; }
+  @media (max-width: 768px) {
+    .submitRecipe {
+      right: 25%;
+      bottom: 5px; } }
 
 .heading {
   font-size: 2rem;
@@ -42,6 +52,9 @@ body {
   margin-top: 20px;
   margin-bottom: 0;
   padding: 0; }
+  @media (max-width: 768px) {
+    .heading {
+      margin-top: 10px; } }
 
 .recipeList {
   margin-top: 30px; }
@@ -74,6 +87,14 @@ body {
   padding: 30px;
   position: relative;
   clear: both; }
+  @media (max-width: 375px) {
+    .recipeCardInput {
+      width: 104%;
+      box-shadow: none; } }
+  @media (max-width: 768px) {
+    .recipeCardInput {
+      width: 115%;
+      box-shadow: none; } }
 
 .recipeListSection {
   width: 20%; }
@@ -96,6 +117,9 @@ body {
   .recipeInput .recipeNameContainer {
     display: flex;
     margin: 20px 0; }
+    @media (max-width: 768px) {
+      .recipeInput .recipeNameContainer {
+        flex-direction: column; } }
     .recipeInput .recipeNameContainer .recipeNameLabel {
       font-size: 1rem;
       font-family: 'Josefin Sans', sans-serif;
@@ -103,6 +127,9 @@ body {
       text-transform: uppercase;
       width: 30%;
       padding: 5px; }
+      @media (max-width: 768px) {
+        .recipeInput .recipeNameContainer .recipeNameLabel {
+          width: 100%; } }
     .recipeInput .recipeNameContainer .recipeNameInput {
       font-size: 0.8rem;
       font-family: 'Josefin Sans', sans-serif;
@@ -111,9 +138,16 @@ body {
       width: 45%;
       border: none;
       border-bottom: 1px solid #dcdcdc; }
+      @media (max-width: 768px) {
+        .recipeInput .recipeNameContainer .recipeNameInput {
+          width: 100%;
+          margin-top: 10px; } }
   .recipeInput .ingredientContainer {
     display: flex;
     margin: 20px 0; }
+    @media (max-width: 768px) {
+      .recipeInput .ingredientContainer {
+        flex-direction: column; } }
     .recipeInput .ingredientContainer .ingredientsLabel {
       font-size: 1rem;
       font-family: 'Josefin Sans', sans-serif;
@@ -121,6 +155,9 @@ body {
       text-transform: uppercase;
       width: 30%;
       padding: 5px; }
+      @media (max-width: 768px) {
+        .recipeInput .ingredientContainer .ingredientsLabel {
+          width: 100%; } }
     .recipeInput .ingredientContainer .ingredientsInput {
       font-size: 0.8rem;
       font-family: 'Josefin Sans', sans-serif;
@@ -129,9 +166,16 @@ body {
       width: 50%;
       border: none;
       border-bottom: 1px solid #dcdcdc; }
+      @media (max-width: 768px) {
+        .recipeInput .ingredientContainer .ingredientsInput {
+          width: 100%;
+          margin-top: 10px; } }
   .recipeInput .directionsContainer {
     display: flex;
     margin: 20px 0; }
+    @media (max-width: 768px) {
+      .recipeInput .directionsContainer {
+        flex-direction: column; } }
     .recipeInput .directionsContainer .directionsLabel {
       font-size: 1rem;
       font-family: 'Josefin Sans', sans-serif;
@@ -139,6 +183,9 @@ body {
       text-transform: uppercase;
       width: 30%;
       padding: 5px; }
+      @media (max-width: 768px) {
+        .recipeInput .directionsContainer .directionsLabel {
+          width: 100%; } }
     .recipeInput .directionsContainer .recipeDirectionsInput {
       font-size: 1rem;
       font-family: 'Josefin Sans', sans-serif;
@@ -147,6 +194,10 @@ body {
       width: 50%;
       border: none;
       border-bottom: 1px solid #dcdcdc; }
+      @media (max-width: 768px) {
+        .recipeInput .directionsContainer .recipeDirectionsInput {
+          width: 100%;
+          margin-top: 10px; } }
   .recipeInput .recipeButton {
     font-size: 0.8rem;
     font-family: 'Josefin Sans', sans-serif;

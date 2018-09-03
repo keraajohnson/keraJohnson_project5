@@ -71,13 +71,13 @@ class NewRecipe extends Component {
                 <div className='recipeCardInput'>
                     <form onSubmit={this.handleSubmit}>
                         <div className="recipeInput">
-                            <div className="recipeNameContainer">
-                                <label className="recipeNameLabel" htmlFor="recipeName" id="recipeName">Recipe Name</label>
+                            <div className="recipeNameContainer container">
+                                <label className="recipeNameLabel name" htmlFor="recipeName" id="recipeName">Recipe Name</label>
                                 <input onChange={this.handleChange} name="recipeName" className="recipeNameInput input" id="recipeName" type="text" value={this.state.recipeName} required/>
                             </div>
                             
-                            <div className="ingredientContainer">
-                                <label className="ingredientsLabel" id="currentIngredient" htmlFor="recipeIngredients">Ingredients</label>
+                            <div className="ingredientContainer container">
+                                <label className="ingredientsLabel name" id="currentIngredient" htmlFor="recipeIngredients">Ingredients</label>
                                 <input onChange={this.handleChange} name="recipeIngredients" className="ingredientsInput input" id="currentIngredient" value={this.state.currentIngredient} type="text"/>
                                 <button className="ingredientButton recipeButton" onClick={this.addNewIngredient}>Add</button>
                             </div>
@@ -89,8 +89,8 @@ class NewRecipe extends Component {
                                 })}
                             </div>   
                             
-                            <div className="directionsContainer">
-                                <label htmlFor="recipeDirections" name="recipeDirections" className="directionsLabel" id="currentDirections">Directions</label>
+                            <div className="directionsContainer container">
+                                <label htmlFor="recipeDirections" name="recipeDirections" className="directionsLabel name" id="currentDirections">Directions</label>
                                 <input onChange={this.handleChange} className="recipeDirectionsInput input" id="currentDirections" value={this.state.currentDirections} type="text"/>
                                 <button className="directionsButton recipeButton" onClick={this.addNewDirection}>Add</button>
                             </div>
