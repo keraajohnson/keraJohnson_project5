@@ -1,10 +1,43 @@
+
+
+
+
+
+// @mixin breakpoint($point){
+//     // 
+//     @if $point == desktop{
+//         @media(max - width: 1280px) { @content; }
+//     }
+//     @else if $point == laptop{
+//         @media(max - width: 1024px) { @content; }
+//     }
+//     // 
+//     @else if $point == bigPhablet{
+//         @media(max - width: 768px) { @content; }
+//     }
+//     @else if $point == phablet{
+//         @media(max - width: 550px) { @content; }
+//     }
+//     @else if $point == mobileonly{
+//         @media(max - width: 375px) { @content; }
+
+//     }
+//     @else if $point == smallmobileonly{
+//         @media(max - width: 320px) { @content; }
+//     }
+// }
+
+
+
+
+
 import React from 'react';
 
 const RecipeCard = (props) => {
     return (
     <section className="recipeCard">
         <div className="newButton clearfix">
-            <button onClick={this.handleClick} className='newRecipeButton'>Exit Recipe</button>
+                <button onClick={props.showFullRecipe === false} className='newRecipeButton'>Exit Recipe</button>
         </div>
         <div className="newCard">
             

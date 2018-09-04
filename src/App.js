@@ -21,7 +21,6 @@ class App extends Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
       if(user) {
-        // firebase ref call
         dbRef.on('value', (snapshot) => {
           this.sortRecipes(snapshot.val());
         });
@@ -44,7 +43,6 @@ class App extends Component {
     }
   }
   addRecipeToDatabase = (name, ingredients, directions) => {
-    // console.log('add rec fired');
     dbRef.push({
       recipeName: name,
       recipeIngredients: ingredients,
@@ -67,13 +65,15 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App wrapper">
+      <section>
         <Header />
-      <div className="appContainer">
-          {this.state.showFullRecipe === false ? <NewRecipe addRecipeToDatabase={this.addRecipeToDatabase} /> : <RecipeCard recipeKey={this.state.recipeKey} directions={this.state.directions} ingredients={this.state.ingredients} recipeName={this.state.recipeName}/>}
-        <RecipeList showFullRecipe={this.showFullRecipe} recipes={this.state.recipeList}/>
-      </div>
-      </div>
+        <div className="App wrapper">
+        <div className="appContainer">
+            {this.state.showFullRecipe === false ? <NewRecipe addRecipeToDatabase={this.addRecipeToDatabase} /> : <RecipeCard showFullRecipe={this.state.showFullRecipe.showFullRecipe} recipeKey={this.state.recipeKey} directions={this.state.directions} ingredients={this.state.ingredients} recipeName={this.state.recipeName}/>}
+          <RecipeList showFullRecipe={this.showFullRecipe} recipes={this.state.recipeList}/>
+        </div>
+        </div>
+      </section>
     );
   }
 }

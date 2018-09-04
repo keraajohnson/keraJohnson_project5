@@ -11,6 +11,9 @@ body {
   @media (max-width: 768px) {
     .appContainer {
       flex-direction: column; } }
+  @media (max-width: 1024px) {
+    .appContainer {
+      flex-direction: column; } }
 
 .wrapper {
   width: 80%;
@@ -34,15 +37,60 @@ body {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: #678797;
-  position: absolute;
   background: none;
   border: none;
-  bottom: 10px;
-  right: 40%; }
-  @media (max-width: 768px) {
-    .submitRecipe {
-      right: 25%;
-      bottom: 5px; } }
+  margin-top: 30px; }
+
+.auth {
+  background-color: #fcfcfc;
+  width: 100%; }
+  .auth nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0; }
+    .auth nav ul li {
+      list-style: none;
+      padding: 20px 10px 10px 10px; }
+      .auth nav ul li a {
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-family: 'Josefin Sans', sans-serif;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: black; }
+
+.userForm {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 15px;
+  font-size: 0.9rem;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase; }
+  .userForm .email,
+  .userForm .password,
+  .userForm .confirm {
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    border: none;
+    margin-left: 7px;
+    background-color: #fcfcfc; }
+  .userForm .password,
+  .userForm .confirm {
+    width: 10%; }
+  .userForm .email {
+    margin: -4px 0 10px 7px; }
+  .userForm button {
+    font-size: 0.8rem;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border: none;
+    background: #fcfcfc;
+    color: red; }
 
 .heading {
   font-size: 2rem;
@@ -51,7 +99,8 @@ body {
   text-transform: uppercase;
   margin-top: 20px;
   margin-bottom: 0;
-  padding: 0; }
+  padding: 0;
+  text-align: center; }
   @media (max-width: 768px) {
     .heading {
       margin-top: 10px; } }
@@ -62,13 +111,7 @@ body {
     font-size: 1.4rem;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 4px;
-    text-transform: uppercase;
-    position: relative; }
-    .recipeList h2::after {
-      position: absolute;
-      border-bottom: 2px solid black;
-      width: 20%;
-      height: 2px; }
+    text-transform: uppercase; }
   .recipeList p {
     font-size: 1rem;
     font-family: 'Josefin Sans', sans-serif;
@@ -78,6 +121,20 @@ body {
 
 .newRecipeSection {
   width: 80%; }
+  @media (max-width: 1024px) {
+    .newRecipeSection {
+      width: 90%; } }
+  @media (max-width: 768px) {
+    .newRecipeSection {
+      width: 100%;
+      box-shadow: none;
+      overflow: hidden; } }
+  @media (max-width: 550px) {
+    .newRecipeSection {
+      width: 100%; } }
+  @media (max-width: 375px) {
+    .newRecipeSection {
+      width: 100%; } }
 
 .recipeCardInput {
   width: 80%;
@@ -86,14 +143,23 @@ body {
   box-shadow: 8px 8px 20px -5px rgba(0, 0, 0, 0.74);
   padding: 30px;
   position: relative;
-  clear: both; }
-  @media (max-width: 375px) {
+  clear: both;
+  margin-bottom: 30px; }
+  @media (max-width: 1024px) {
     .recipeCardInput {
-      width: 104%;
-      box-shadow: none; } }
+      width: 100%; } }
   @media (max-width: 768px) {
     .recipeCardInput {
-      width: 115%;
+      width: 100%;
+      box-shadow: none;
+      padding: 0;
+      text-align: center; } }
+  @media (max-width: 550px) {
+    .recipeCardInput {
+      width: 100%; } }
+  @media (max-width: 375px) {
+    .recipeCardInput {
+      width: 100%;
       box-shadow: none; } }
 
 .recipeListSection {
@@ -211,6 +277,15 @@ body {
 
 .recipeCard {
   width: 80%; }
+  @media (max-width: 1280px) {
+    .recipeCard {
+      width: 70%; } }
+  @media (max-width: 1024px) {
+    .recipeCard {
+      width: 100%; } }
+  @media (max-width: 768px) {
+    .recipeCard {
+      width: 100%; } }
 
 .newCard {
   width: 80%;
@@ -219,6 +294,21 @@ body {
   box-shadow: 8px 8px 20px -5px rgba(0, 0, 0, 0.74);
   padding: 30px;
   margin-top: 50px; }
+  @media (max-width: 1024px) {
+    .newCard {
+      width: 90%; } }
+  @media (max-width: 768px) {
+    .newCard {
+      width: 90%;
+      overflow: hidden;
+      box-shadow: none; } }
+  @media (max-width: 550px) {
+    .newCard {
+      width: 87%; } }
+  @media (max-width: 375px) {
+    .newCard {
+      width: 78%;
+      box-shadow: none; } }
   .newCard li {
     list-style: none;
     font-size: 0.7rem;
@@ -227,43 +317,74 @@ body {
     text-transform: lowercase;
     margin: 5px 0;
     text-align: left; }
+    @media (max-width: 768px) {
+      .newCard li {
+        text-align: center; } }
   .newCard .recipeName {
     display: flex;
     width: 60%; }
+    @media (max-width: 768px) {
+      .newCard .recipeName {
+        flex-direction: column;
+        width: 100%; } }
     .newCard .recipeName h2 {
       font-size: 1.1rem;
       font-family: 'Josefin Sans', sans-serif;
       letter-spacing: 4px;
       text-transform: uppercase; }
+      @media (max-width: 768px) {
+        .newCard .recipeName h2 {
+          text-align: center; } }
     .newCard .recipeName p {
       font-size: 0.9rem;
       font-family: 'Josefin Sans', sans-serif;
       letter-spacing: 3px;
       text-transform: lowercase;
       margin: 16px 0px 0 20px; }
+      @media (max-width: 768px) {
+        .newCard .recipeName p {
+          text-align: center; } }
   .newCard .ingredients {
     display: flex;
     margin-top: 20px; }
+    @media (max-width: 768px) {
+      .newCard .ingredients {
+        flex-direction: column; } }
     .newCard .ingredients .ingredientsHeading {
       font-size: 0.7rem;
       font-family: 'Josefin Sans', sans-serif;
       letter-spacing: 4px;
       text-transform: uppercase; }
+      @media (max-width: 768px) {
+        .newCard .ingredients .ingredientsHeading {
+          text-align: center; } }
     .newCard .ingredients .ingredientsList {
       display: flex;
       flex-direction: column;
       margin-top: 12px;
       margin-left: 20px; }
+      @media (max-width: 768px) {
+        .newCard .ingredients .ingredientsList {
+          text-align: center; } }
   .newCard .directions {
     display: flex;
     margin-top: 20px; }
+    @media (max-width: 768px) {
+      .newCard .directions {
+        flex-direction: column; } }
     .newCard .directions .directionsHeading {
       font-size: 0.7rem;
       font-family: 'Josefin Sans', sans-serif;
       letter-spacing: 4px;
       text-transform: uppercase; }
+      @media (max-width: 768px) {
+        .newCard .directions .directionsHeading {
+          text-align: center; } }
     .newCard .directions .directionsList {
       display: flex;
       flex-direction: column;
       margin-top: 10px;
       margin-left: 32px; }
+      @media (max-width: 768px) {
+        .newCard .directions .directionsList {
+          text-align: center; } }

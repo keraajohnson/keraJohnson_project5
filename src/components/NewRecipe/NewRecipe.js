@@ -66,7 +66,7 @@ class NewRecipe extends Component {
         return(
             <section className="newRecipeSection">
                 <div className="newButton clearfix">
-                    <button onClick={this.handleClick} className='newRecipeButton'>New Recipe</button>
+                    <button onClick={this.handleClick} className='newRecipeButton'>New <i class="fas fa-plus"></i></button>
                 </div>
                 <div className='recipeCardInput'>
                     <form onSubmit={this.handleSubmit}>
@@ -79,7 +79,7 @@ class NewRecipe extends Component {
                             <div className="ingredientContainer container">
                                 <label className="ingredientsLabel name" id="currentIngredient" htmlFor="recipeIngredients">Ingredients</label>
                                 <input onChange={this.handleChange} name="recipeIngredients" className="ingredientsInput input" id="currentIngredient" value={this.state.currentIngredient} type="text"/>
-                                <button className="ingredientButton recipeButton" onClick={this.addNewIngredient}>Add</button>
+                                <button className="ingredientButton recipeButton" onClick={this.addNewIngredient}><i class="fas fa-plus"></i></button>
                             </div>
                             <div value={this.state.ingredientsListUnsubmitted} className="ingredientsListUnsubmitted">
                                 {this.state.recipeIngredients.map((item) => {
@@ -92,7 +92,7 @@ class NewRecipe extends Component {
                             <div className="directionsContainer container">
                                 <label htmlFor="recipeDirections" name="recipeDirections" className="directionsLabel name" id="currentDirections">Directions</label>
                                 <input onChange={this.handleChange} className="recipeDirectionsInput input" id="currentDirections" value={this.state.currentDirections} type="text"/>
-                                <button className="directionsButton recipeButton" onClick={this.addNewDirection}>Add</button>
+                                <button className="directionsButton recipeButton" onClick={this.addNewDirection}><i class="fas fa-plus"></i></button>
                             </div>
                            
                             <div value={this.state.directionsListUnsubmitted} className="directionsListUnsubmitted">
