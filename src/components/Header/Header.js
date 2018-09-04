@@ -11,17 +11,20 @@ class Header extends Component {
             confirm: ''
         }
     }
+    // showing the correct form based on what the user clicked on
     formShow = (e) => {
         e.preventDefault();
         this.setState({
             formShow: e.target.className
         })
     }
+    // getting the value of the input that's changed
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
+    // signing up the user
     signUp = (e) => {
         e.preventDefault();
         if(this.state.password === this.state.confirm){
@@ -30,12 +33,14 @@ class Header extends Component {
                 console.log(data); 
             });
             this.setState({
+                formShow: '',
                 email: '',
                 password: '',
                 confirm: ''
             })
         }
     }
+    // logging in an exisiting user
     logIn = (e) => {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -43,6 +48,7 @@ class Header extends Component {
             console.log(data);
         });
         this.setState({
+            formShow: '',
             email: '',
             password: '',
             confirm: ''
@@ -52,7 +58,7 @@ class Header extends Component {
         let formLogin = '';
         if(this.state.formShow === 'signUp') {
             formLogin = (
-                <form onSubmit={this.signUp} className='userForm wrapper'>
+                <form onSubmit={this.signUp} value={this.state.formShow} className='userForm wrapper'>
                     <label htmlFor="email">Email:</label>
                     <input type='email' className="email" name='email' onChange={this.handleChange} value={this.state.email}/>
                     <label htmlFor="password">Password:</label>
@@ -64,7 +70,7 @@ class Header extends Component {
             );
         } else if(this.state.formShow === 'logIn') {
             formLogin = (
-                <form onSubmit={this.logIn} className="userForm wrapper">
+                <form onSubmit={this.logIn} value={this.state.formShow} className="userForm wrapper">
                     <label htmlFor="email">Email: </label>
                     <input type="email" className="email" name="email" value={this.state.email} onChange={this.handleChange}/>
                     <label htmlFor="password">Password: </label>

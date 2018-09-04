@@ -28,6 +28,7 @@ class NewRecipe extends Component {
             recipeDirections: []
         })
     }
+    // adding a new ingredient on the click of the add button 
     addNewIngredient = (e) => {
         e.preventDefault()
         console.log('adding new ingre')
@@ -39,6 +40,7 @@ class NewRecipe extends Component {
             currentDirections: ''
         });
     }
+    // adding a new direction on the click of a button 
     addNewDirection = (e) => {
         e.preventDefault()
         const directions = Array.from(this.state.recipeDirections);

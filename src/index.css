@@ -68,6 +68,9 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 4px;
   text-transform: uppercase; }
+  @media (max-width: 768px) {
+    .userForm {
+      flex-direction: column; } }
   .userForm .email,
   .userForm .password,
   .userForm .confirm {
@@ -78,11 +81,17 @@ body {
     border: none;
     margin-left: 7px;
     background-color: #fcfcfc; }
+    @media (max-width: 1024px) {
+      .userForm .email,
+      .userForm .password,
+      .userForm .confirm {
+        padding: 10px;
+        width: 30%;
+        border-bottom: 1px solid red;
+        margin: 10px; } }
   .userForm .password,
   .userForm .confirm {
-    width: 10%; }
-  .userForm .email {
-    margin: -4px 0 10px 7px; }
+    width: 30%; }
   .userForm button {
     font-size: 0.8rem;
     font-family: 'Josefin Sans', sans-serif;

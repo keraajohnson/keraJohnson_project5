@@ -115,6 +115,9 @@ body {
   justify-content: flex-end;
   padding-bottom: 15px;
   @include headingFont(.9rem);
+  @include breakpoint(bigPhablet) {
+    flex-direction: column;
+  }
     .email,
     .password,
     .confirm {
@@ -122,13 +125,16 @@ body {
       border: none;
       margin-left: 7px;
       background-color: #fcfcfc;
+      @include breakpoint(laptop) {
+        padding: 10px;
+        width: 30%;
+        border-bottom: 1px solid red;
+        margin: 10px;
+      }
     }
     .password, 
     .confirm {
-      width: 10%;
-    }
-    .email{
-      margin: -4px 0 10px 7px;
+      width: 30%;
     }
     button {
       @include headingFont(.8rem);
