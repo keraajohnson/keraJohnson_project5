@@ -61,7 +61,7 @@ class App extends Component {
     const dbRef = firebase.database().ref(key);
     dbRef.on('value', (snapshot)=> {
       this.setState({
-        showFullRecipe: !this.state.showFullRecipe,
+        showFullRecipe: true,
         recipeKey: recipeKey,
         directions: snapshot.val().recipeDirections,
         ingredients: snapshot.val().recipeIngredients,
@@ -69,17 +69,22 @@ class App extends Component {
       })
     })
   }
+  exitFullRecipe = () => {
+    this.setState({
+      showFullRecipe: false
+    })
+  }
   render() {
     return (
       <section>
         <Header />
         <div className="App wrapper">
-        <div className="appContainer">
-            {this.state.showFullRecipe === false ? 
-            <NewRecipe addRecipeToDatabase={this.addRecipeToDatabase} /> : 
-            <RecipeCard showFullRecipe={this.state.showFullRecipe} recipeKey={this.state.recipeKey} directions={this.state.directions} ingredients={this.state.ingredients} recipeName={this.state.recipeName}/>}
-          <RecipeList showFullRecipe={this.showFullRecipe} recipes={this.state.recipeList}/>
-        </div>
+          <div className="appContainer">
+              {this.state.showFullRecipe === false ? 
+              <NewRecipe addRecipeToDatabase={this.addRecipeToDatabase} /> : 
+              <RecipeCard exitFullRecipe={this.exitFullRecipe} recipeKey={this.state.recipeKey} directions={this.state.directions} ingredients={this.state.ingredients} recipeName={this.state.recipeName}/>}
+            <RecipeList showFullRecipe={this.showFullRecipe} recipes={this.state.recipeList}/>
+          </div>
         </div>
       </section>
     );
