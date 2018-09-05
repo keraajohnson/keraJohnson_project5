@@ -48,7 +48,7 @@ class App extends Component {
   }
   // pushing the recipe information to the database
   addRecipeToDatabase = (name, ingredients, directions) => {
-    dbRef.push({
+    dbRef.child(firebase.auth().currentUser.uid).push({
       recipeName: name,
       recipeIngredients: ingredients,
       recipeDirections: directions
@@ -59,7 +59,10 @@ class App extends Component {
   showFullRecipe = (recipeKey) => {
     const key = recipeKey
     const dbRef = firebase.database().ref(key);
-    dbRef.on('value', (snapshot)=> {
+    // ----------------- 
+      // come back to this for beer bible user auth
+    // -----------------
+    dbRef.child(firebase.auth().currentUser.uid).on('value', (snapshot)=> {
       this.setState({
         showFullRecipe: true,
         recipeKey: recipeKey,
