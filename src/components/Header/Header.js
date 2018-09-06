@@ -30,7 +30,13 @@ class Header extends Component {
         if(this.state.password === this.state.confirm){
             firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
             .then((data) => {
-                console.log(data); 
+                const userID = data.user.uid
+                const usersDirectory = firebase.database().ref(`users/${userID}`)
+                usersDirectory.set({
+                    recipes: [],
+                    email: this.state.email,
+                    password: this.state.password
+                })
             });
             this.setState({
                 formShow: '',

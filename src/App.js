@@ -24,7 +24,7 @@ class App extends Component {
     // ensuring the user is logged in to have access to the database
     firebase.auth().onAuthStateChanged((user) => {
       if(user) {
-        dbRef.on('value', (snapshot) => {
+        dbRef.child(`users/${user.uid}/recipes`).on('value', (snapshot) => {
           this.sortRecipes(snapshot.val());
         });
       }
@@ -48,7 +48,7 @@ class App extends Component {
   }
   // pushing the recipe information to the database
   addRecipeToDatabase = (name, ingredients, directions) => {
-    dbRef.child(firebase.auth().currentUser.uid).push({
+    dbRef.child(`users/${firebase.auth().currentUser.uid}/recipes`).push({
       recipeName: name,
       recipeIngredients: ingredients,
       recipeDirections: directions
@@ -57,12 +57,8 @@ class App extends Component {
   }
   // shows full recipe on the click of a recipe in the recipe list
   showFullRecipe = (recipeKey) => {
-    const key = recipeKey
-    const dbRef = firebase.database().ref(key);
-    // ----------------- 
-      // come back to this for beer bible user auth
-    // -----------------
-    dbRef.child(firebase.auth().currentUser.uid).on('value', (snapshot)=> {
+    const currentUserID = firebase.auth().currentUser.uid;
+    dbRef.child(`users/${currentUserID}/recipes/${recipeKey}`).once('value',(snapshot)=> {
       this.setState({
         showFullRecipe: true,
         recipeKey: recipeKey,

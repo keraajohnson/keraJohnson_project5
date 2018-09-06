@@ -8,7 +8,7 @@ const RecipeList = (props) => {
                 if (item) {
                     return (
                         <div>
-                            <p key={item.key} onClick={() => { props.showFullRecipe(item.key)}}>{item.recipeName}</p>
+                            <p key={item.key} onClick={() => {props.showFullRecipe(item.key)}}>{item.recipeName}</p>
                         </div>
                     )
                 }
